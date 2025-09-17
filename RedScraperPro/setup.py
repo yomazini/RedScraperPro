@@ -48,8 +48,8 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "redscraperpro=main:main",
-            "rsp=main:main",
+            "redscraperpro=redscraperpro.main:main",
+            "rsp=redscraperpro.main:main",
         ],
     },
     include_package_data=True,

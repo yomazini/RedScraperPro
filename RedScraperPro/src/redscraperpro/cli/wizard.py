@@ -13,9 +13,9 @@ from rich.panel import Panel
 from rich.text import Text
 from rich.table import Table
 
-from ..utils.config import Config
-from ..utils.ascii_art import ASCIIArt
-from ..utils.quotes import Quotes
+from redscraperpro.utils.config import Config
+from redscraperpro.utils.ascii_art import ASCIIArt
+from redscraperpro.utils.quotes import Quotes
 
 
 class ConfigWizard:

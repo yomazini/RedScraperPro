@@ -9,13 +9,16 @@ from datetime import datetime
 from typing import List, Dict, Any, Optional, Union
 from pathlib import Path
 
-from ..utils.config import Config
-from ..utils.logger import Logger
-from ..utils.progress import ProgressTracker
-from .post_scraper import PostScraper
-from .comment_scraper import CommentScraper
-from .user_scraper import UserScraper
-from ..exporters import CSVExporter, XLSXExporter, JSONExporter, TXTExporter
+from redscraperpro.utils.config import Config
+from redscraperpro.utils.logger import Logger
+from redscraperpro.utils.progress import ProgressTracker
+from redscraperpro.exporters.csv_exporter import CSVExporter
+from redscraperpro.exporters.json_exporter import JSONExporter
+from redscraperpro.exporters.txt_exporter import TXTExporter
+from redscraperpro.exporters.xlsx_exporter import XLSXExporter
+from redscraperpro.scraper.post_scraper import PostScraper
+from redscraperpro.scraper.comment_scraper import CommentScraper
+from redscraperpro.scraper.user_scraper import UserScraper
 
 
 class RedditScraper:

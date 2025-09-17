@@ -12,15 +12,12 @@ import signal
 import argparse
 from pathlib import Path
 
-# Add src to path for imports
-sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
-
-from utils.ascii_art import ASCIIArt
-from utils.config import Config
-from utils.logger import Logger
-from utils.quotes import Quotes
-from cli.interface import CLIInterface
-from cli.wizard import ConfigWizard
+from redscraperpro.cli.interface import CLIInterface
+from redscraperpro.cli.wizard import ConfigWizard
+from redscraperpro.utils.ascii_art import ASCIIArt
+from redscraperpro.utils.config import Config
+from redscraperpro.utils.logger import Logger
+from redscraperpro.utils.quotes import Quotes
 
 
 def signal_handler(sig, frame):

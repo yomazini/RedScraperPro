@@ -4,7 +4,7 @@ Sentiment Analysis for RedScraperPro
 """
 
 from typing import Dict, Any, Optional, List
-from ..utils.logger import Logger
+from redscraperpro.utils.logger import Logger
 
 
 class SentimentAnalyzer:

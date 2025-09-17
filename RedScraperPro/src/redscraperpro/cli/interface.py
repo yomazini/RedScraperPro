@@ -14,11 +14,11 @@ from rich.table import Table
 from rich.text import Text
 from rich.columns import Columns
 
-from ..utils.config import Config
-from ..utils.logger import Logger
-from ..utils.ascii_art import ASCIIArt
-from ..utils.quotes import Quotes
-from ..utils.progress import ProgressTracker
+from redscraperpro.utils.config import Config
+from redscraperpro.utils.logger import Logger
+from redscraperpro.utils.ascii_art import ASCIIArt
+from redscraperpro.utils.quotes import Quotes
+from redscraperpro.utils.progress import ProgressTracker
 
 
 class CLIInterface:
@@ -78,12 +78,10 @@ class CLIInterface:
             self._exit_application()
     
     def run_command_mode(self, args):
-        """Run in command-line mode with arguments"""
         self.logger.session_start(f"command_mode_{args.mode}")
-        
         try:
             # Import scraper here to avoid circular imports
-            from ..scraper.reddit_scraper import RedditScraper
+            from redscraperpro.scraper.reddit_scraper import RedditScraper
             
             # Create scraper instance
             scraper = RedditScraper(self.config, self.logger, self.progress_tracker)
@@ -289,7 +287,7 @@ class CLIInterface:
         """Execute the scraping operation"""
         try:
             # Import scraper here to avoid circular imports
-            from ..scraper.reddit_scraper import RedditScraper
+            from redscraperpro.scraper.reddit_scraper import RedditScraper
             
             # Create scraper instance
             scraper = RedditScraper(self.config, self.logger, self.progress_tracker)

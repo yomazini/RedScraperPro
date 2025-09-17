@@ -6,8 +6,8 @@ TXT Exporter for RedScraperPro
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional
-from ..utils.config import Config
-from ..utils.logger import Logger
+from redscraperpro.utils.config import Config
+from redscraperpro.utils.logger import Logger
 
 
 class TXTExporter:

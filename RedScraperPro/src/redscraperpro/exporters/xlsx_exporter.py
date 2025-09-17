@@ -11,8 +11,8 @@ import pandas as pd
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils.dataframe import dataframe_to_rows
-from ..utils.config import Config
-from ..utils.logger import Logger
+from redscraperpro.utils.config import Config
+from redscraperpro.utils.logger import Logger
 
 
 class XLSXExporter:

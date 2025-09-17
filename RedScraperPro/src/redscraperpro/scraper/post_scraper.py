@@ -6,8 +6,8 @@ Post Scraper for RedScraperPro
 import praw
 from datetime import datetime
 from typing import Dict, Any, Optional
-from ..utils.logger import Logger
-from ..utils.progress import ProgressTracker
+from redscraperpro.utils.logger import Logger
+from redscraperpro.utils.progress import ProgressTracker
 
 
 class PostScraper:
