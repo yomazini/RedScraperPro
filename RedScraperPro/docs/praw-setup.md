@@ -61,6 +61,7 @@ Create a descriptive User Agent string:
 Format: AppName:Version (by /u/YourRedditUsername)
 Example: RedScraperPro:v1.0.0 (by /u/yomazini)
 ```
+or can get it from here https://51degrees.com/developers/user-agent-tester
 
 ### Step 6: Configure RedScraperPro
 
