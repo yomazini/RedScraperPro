@@ -505,4 +505,4 @@ This software uses several third-party libraries with their own licenses:
 
 **🩸 "Those who cannot acknowledge themselves will eventually fail." - Itachi Uchiha 🩸**
 
-*RedScraperPro acknowledges itself as the ultimate Reddit scraping tool, and therefore, it will never fail.*
+*RedScraperPro acknowledges itself as the ultimate Reddit scraping tool, and therefore, it will never fail.* How?, With Your *Support*.
