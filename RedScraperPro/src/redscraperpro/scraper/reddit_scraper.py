@@ -113,7 +113,7 @@ class RedditScraper:
             raise
     
     def scrape_subreddit(self, subreddit_name: str, limit: int = 100, include_comments: bool = True,
-                        comment_depth: int = 1, sort_method: str = "hot") -> List[Dict[str, Any]]:
+                        comment_depth: int = 1, sort_method: str = "hot", sentiment_analysis: bool = False) -> List[Dict[str, Any]]:
         """Scrape posts from a specific subreddit"""
         self.logger.scraping_start("subreddit", subreddit_name, limit)
         self.progress_tracker.start_session("subreddit", subreddit_name, limit)
@@ -171,7 +171,7 @@ class RedditScraper:
             raise
     
     def scrape_user(self, username: str, limit: int = 100, include_comments: bool = True,
-                   content_type: str = "submissions") -> List[Dict[str, Any]]:
+                   content_type: str = "submissions", sentiment_analysis: bool = False) -> List[Dict[str, Any]]:
         """Scrape posts/comments from a specific user"""
         self.logger.scraping_start("user", username, limit)
         self.progress_tracker.start_session("user", username, limit)
@@ -230,7 +230,7 @@ class RedditScraper:
             raise
     
     def scrape_post(self, post_id: str, include_comments: bool = True, 
-                   comment_depth: int = 1) -> List[Dict[str, Any]]:
+                   comment_depth: int = 1, sentiment_analysis: bool = False) -> List[Dict[str, Any]]:
         """Scrape a specific post and its comments"""
         self.logger.scraping_start("post", post_id, 1)
         self.progress_tracker.start_session("post", post_id, 1)
