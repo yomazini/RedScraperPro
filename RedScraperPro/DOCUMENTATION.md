@@ -487,6 +487,7 @@ This software uses several third-party libraries with their own licenses:
 ### Documentation
 - **Installation Guide**: `docs/installation.md`
 - **PRAW Setup**: `docs/praw-setup.md`
+- **Youtube Video Tutorial**: `link soon`
 - **Usage Examples**: `docs/usage-examples.md`
 - **Troubleshooting**: `docs/troubleshooting.md`
 
