@@ -88,3 +88,15 @@ Here are a few examples of how to use the tool directly from the command line:
     ```bash
     rsp --mode user --target "some_username"
     ```
+
+## 5. Additional Fixes
+
+After the initial debugging, two more issues were identified and resolved.
+
+*   **Progress Bar Crash:**
+    *   **Problem:** The application would crash when starting a scrape, showing a `TypeError` related to an unexpected argument `spinner_style`.
+    *   **Fix:** This was a dependency issue. The `rich` library had been updated and renamed the parameter. The fix was to change `spinner_style` to `style` in `src/redscraperpro/utils/progress.py`.
+
+*   **Empty CSV and XLSX Exports:**
+    *   **Problem:** The CSV and XLSX files were created, but the data sheets were empty. The CSV had the correct number of rows, but no data, and the XLSX was missing all post and comment data.
+    *   **Fix:** The logic used to "flatten" the scraped data for the export was buggy. The recursive function was not correctly returning the data. This was fixed by correcting the logic in the `_flatten_data` and `_flatten_dict` functions inside both `src/redscraperpro/exporters/csv_exporter.py` and `src/redscraperpro/exporters/xlsx_exporter.py`.

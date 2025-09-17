@@ -60,40 +60,25 @@ class CSVExporter:
     
     def _flatten_data(self, data: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """Flatten nested dictionaries and lists for CSV export"""
-        flattened = []
-        
-        for item in data:
-            flat_item = {}
-            self._flatten_dict(item, flat_item)
-            flattened.append(flat_item)
-        
-        return flattened
-    
+        return [self._flatten_dict(item) for item in data]
+
     def _flatten_dict(self, d: Dict[str, Any], parent_key: str = '', sep: str = '_') -> Dict[str, Any]:
         """Recursively flatten a nested dictionary"""
-        items = []
-        
+        items = {}
         for k, v in d.items():
             new_key = f"{parent_key}{sep}{k}" if parent_key else k
-            
             if isinstance(v, dict):
-                items.extend(self._flatten_dict(v, new_key, sep=sep).items())
+                items.update(self._flatten_dict(v, new_key, sep=sep))
             elif isinstance(v, list):
-                # Handle lists by converting to JSON string or flattening if list of dicts
                 if v and isinstance(v[0], dict):
-                    # List of dictionaries - convert to JSON string
-                    items.append((new_key, json.dumps(v, ensure_ascii=False)))
+                    items[new_key] = json.dumps(v, ensure_ascii=False)
                 else:
-                    # Simple list - join as string
-                    items.append((new_key, ', '.join(map(str, v)) if v else ''))
+                    items[new_key] = ', '.join(map(str, v)) if v else ''
             elif v is None:
-                items.append((new_key, ''))
-            elif isinstance(v, bool):
-                items.append((new_key, str(v)))
+                items[new_key] = ''
             else:
-                items.append((new_key, str(v)))
-        
-        return dict(items)
+                items[new_key] = str(v)
+        return items
     
     def _get_fieldnames(self, data: List[Dict[str, Any]]) -> List[str]:
         """Get all unique fieldnames from the data"""
