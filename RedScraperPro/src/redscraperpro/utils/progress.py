@@ -76,7 +76,7 @@ class ProgressTracker:
         
         # Create progress display
         self.progress = Progress(
-            SpinnerColumn(spinner_style="red"),
+            SpinnerColumn(style="red"),
             TextColumn("[bold red]{task.description}"),
             BarColumn(bar_width=40, style="red", complete_style="green"),
             TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
