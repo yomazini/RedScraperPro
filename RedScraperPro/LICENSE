@@ -1,0 +1,58 @@
+MIT License
+
+Copyright (c) 2026 Youssef Mazini
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Additional Terms for Educational Use
+
+This software is primarily intended for educational, research, and legitimate 
+data analysis purposes. Users are expected to:
+
+1. Comply with Reddit's Terms of Service and API guidelines
+2. Respect rate limits and not overload Reddit's servers
+3. Use the tool responsibly and ethically
+4. Not use the software for spam, harassment, or malicious activities
+5. Respect the privacy and rights of Reddit users and communities
+
+## Third-Party Licenses
+
+This software uses several third-party libraries, each with their own licenses:
+
+- **PRAW (Python Reddit API Wrapper)**: BSD 2-Clause License
+- **Rich**: MIT License
+- **Click**: BSD 3-Clause License
+- **Pandas**: BSD 3-Clause License
+- **OpenPyXL**: MIT License
+- **TextBlob**: MIT License
+- **VADER Sentiment**: MIT License
+- **Loguru**: MIT License
+- **PyYAML**: MIT License
+- **Requests**: Apache License 2.0
+
+Please refer to the individual packages for their complete license terms.
+
+## Disclaimer
+
+THE AUTHORS AND CONTRIBUTORS OF THIS SOFTWARE ARE NOT RESPONSIBLE FOR ANY 
+MISUSE OF THE TOOL OR VIOLATIONS OF REDDIT'S TERMS OF SERVICE. USERS ARE 
+SOLELY RESPONSIBLE FOR ENSURING THEIR USE COMPLIES WITH ALL APPLICABLE 
+TERMS, CONDITIONS, AND LAWS.

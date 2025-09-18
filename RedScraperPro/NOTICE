@@ -1,0 +1,86 @@
+NOTICE
+
+RedScraperPro - The Ultimate Reddit Scraping CLI Tool
+Copyright (c) 2026 Youssef Mazini aka @yoamzini
+
+This product includes software developed by @yomazini and the open source community.
+
+---
+
+## Educational Purpose Statement
+
+This software is designed and intended for educational purposes, research, 
+and legitimate data analysis only. It is provided as a learning tool to 
+understand web scraping, API usage, and data analysis techniques.
+IF ANY MISUSE I AM NOT RESPONSIBLE FOR THAT NOR THE COMMUNITY
+
+## Responsible Use Guidelines
+
+Users of this software MUST:
+
+1. **Comply with Reddit's Terms of Service**
+   - Review and follow Reddit's current Terms of Service
+   - Respect Reddit's API guidelines and rate limits
+   - Do not violate Reddit's content policy
+
+2. **Respect Privacy and Rights**
+   - Do not scrape private or sensitive information
+   - Respect user privacy and community guidelines
+   - Do not use scraped data for harassment or malicious purposes
+
+3. **Use Appropriate Rate Limiting**
+   - Do not overload Reddit's servers with excessive requests
+   - Use reasonable delays between API calls
+   - Monitor and respect API rate limits
+
+4. **Legal Compliance**
+   - Ensure your use complies with local laws and regulations
+   - Respect intellectual property rights
+   - Follow data protection and privacy laws (GDPR, CCPA, etc.)
+
+## Third-Party Services
+
+This software integrates with:
+
+- **Reddit API**: Subject to Reddit's Terms of Service and API guidelines
+- **PRAW Library**: Python Reddit API Wrapper (BSD License)
+- **Various Python Libraries**: Each with their respective licenses
+
+## Data Handling
+
+- This software does not store or transmit personal data to external servers
+- All scraped data is stored locally on the user's machine
+- Users are responsible for the secure handling of any scraped data
+- No analytics or telemetry data is collected by this software either
+
+## Limitation of Liability
+
+The authors and contributors of this software:
+
+- Provide the software "as is" without warranty of any kind
+- Are not responsible for any misuse of the software
+- Are not liable for any damages resulting from the use of this software
+- Do not guarantee the software will work with future API changes, will do my best to keep it update; just show your support by start the repo
+
+## Contact Information
+
+- **GitHub Repository**: https://github.com/yomazini/RedScraperPro
+- **Issues and Support**: https://github.com/yomazini/RedScraperPro/issues
+- **Developer LinkedIn**: https://www.linkedin.com/in/youssef-mazini/
+
+## Acknowledgments
+
+Special thanks to:
+
+- The Reddit development team for providing the API
+- The PRAW development team for the excellent Python wrapper
+- The now & future open source community for the various libraries used
+- The philosophical minds whose quotes inspire this tool:
+  - Marcus Aurelius, Epictetus, Seneca (Stoic philosophers)
+  - Franz Kafka (Existentialist writer)
+  - Fyodor Dostoevsky (Russian novelist)
+  - Masashi Kishimoto (Creator of Naruto/Itachi Uchiha)
+
+---
+
+This notice must be included in all copies or substantial portions of the software.
