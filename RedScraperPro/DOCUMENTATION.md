@@ -58,7 +58,10 @@ pip install -r requirements.txt
 
 ### Verify Installation
 ```bash
-python src/main.py --version
+# Verify with any of the aliases
+rsp --version
+redscraperpro --version
+python -m RedScraperPro.src.redscraperpro.main --version
 ```
 
 ---
@@ -68,7 +71,9 @@ python src/main.py --version
 ### Initial Setup
 Run the configuration wizard:
 ```bash
-python src/main.py --setup
+# Run with any of the aliases
+rsp --setup
+redscraperpro --setup
 ```
 
 ### Reddit API Setup
@@ -80,10 +85,10 @@ python src/main.py --setup
 2. **Configure Credentials**:
    - Client ID: String under app name
    - Client Secret: The "secret" field
-   - User Agent: `RedScraperPro:v1.0.0 (by /u/yourusername)`
+   - User Agent: A descriptive user agent, e.g., `RedScraperPro:v1.0.0 (by /u/yourusername)`. You can find your browser's user agent at [What is my User Agent?](https://51degrees.com/developers/user-agent-tester).
 
 ### Configuration File
-Location: `config/config.yaml`
+Location: `RedScraperPro/config/config.yaml`
 ```yaml
 reddit:
   client_id: "your_client_id"
@@ -104,45 +109,47 @@ export:
 
 ### Interactive Mode
 ```bash
-python src/main.py
+# Run with any of the aliases
+rsp
+redscraperpro
 ```
-Displays beautiful ASCII art menu with numbered options (1, 2, 3...).
+Displays a beautiful ASCII art menu with numbered options.
 
 ### Command Line Mode
 
 #### Keyword Scraping
 ```bash
-python src/main.py --mode keyword --query "python programming" --limit 100
+rsp --mode keyword --query "python programming" --limit 100
 ```
 
 #### Subreddit Scraping
 ```bash
-python src/main.py --mode subreddit --target "programming" --limit 50
+redscraperpro --mode subreddit --target "programming" --limit 50
 ```
 
 #### User Scraping
 ```bash
-python src/main.py --mode user --target "username" --limit 25
+rsp --mode user --target "username" --limit 25
 ```
 
 #### Post Scraping
 ```bash
-python src/main.py --mode post --post-id "abc123" --include-comments --depth 2
+redscraperpro --mode post --post-id "abc123" --include-comments --depth 2
 ```
 
 ### Advanced Options
 ```bash
 # With sentiment analysis
-python src/main.py --mode keyword --query "AI" --sentiment --export json
+rsp --mode keyword --query "AI" --sentiment --export json
 
 # Custom output filename
-python src/main.py --mode subreddit --target "technology" --output "tech_posts"
+redscraperpro --mode subreddit --target "technology" --output "tech_posts"
 
 # Resume interrupted session
-python src/main.py --resume "session_file.json"
+rsp --resume "session_file.json"
 
 # Verbose logging
-python src/main.py --verbose --mode keyword --query "debug"
+redscraperpro --verbose --mode keyword --query "debug"
 ```
 
 ---
@@ -292,18 +299,17 @@ post,abc123,Example Post,user123,programming,150,2024-01-15T10:30:00
 ## Advanced Features
 
 ### Sentiment Analysis
-Optional lightweight sentiment analysis using TextBlob and VADER.
+Optional lightweight sentiment analysis using TextBlob and VADER. For more details, see the [Sentiment Analysis Guide](./docs/sentiment_analysis.md).
 
 ```bash
 # Enable sentiment analysis
-python src/main.py --mode keyword --query "climate change" --sentiment
+rsp --mode keyword --query "climate change" --sentiment
 ```
 
 **Output includes:**
 - Polarity score (-1 to 1)
 - Subjectivity score (0 to 1)
-- Emotion scores (positive, negative, neutral)
-- Combined classification with confidence
+- VADER compound score (-1 to 1)
 
 ### Progress Tracking
 Real-time progress display with themed elements:
@@ -317,10 +323,10 @@ Continue interrupted scraping sessions:
 
 ```bash
 # Scraping automatically saves progress
-python src/main.py --mode subreddit --target "news" --limit 1000
+rsp --mode subreddit --target "news" --limit 1000
 
 # If interrupted, resume with:
-python src/main.py --resume "logs/session_20240115_103000.json"
+rsp --resume "logs/session_20240115_103000.json"
 ```
 
 ### Duplicate Removal
@@ -344,7 +350,8 @@ Respects Reddit's API limits:
 #### Installation Problems
 ```bash
 # Python not found
-python3 src/main.py  # Use python3 instead of python
+# Try using python3 instead of python
+python3 -m RedScraperPro.src.redscraperpro.main
 
 # Permission denied (Linux/macOS)
 chmod +x install.sh
@@ -356,10 +363,10 @@ pip install -r requirements.txt
 #### API Issues
 ```bash
 # Invalid credentials
-python src/main.py --setup  # Reconfigure
+rsp --setup  # Reconfigure
 
 # Rate limiting
-# Increase delay in config/config.yaml:
+# Increase delay in RedScraperPro/config/config.yaml:
 scraping:
   rate_limit_delay: 2.0  # Increase from 1.0
 ```
@@ -371,52 +378,52 @@ mkdir -p exports
 chmod 755 exports
 
 # Corrupted files
-# Try different format:
-python src/main.py --mode keyword --query "test" --export json
+# Try a different format:
+rsp --mode keyword --query "test" --export json
 ```
 
 ### Debug Mode
 ```bash
 # Enable verbose logging
-python src/main.py --verbose --mode keyword --query "debug" --limit 5
+rsp --verbose --mode keyword --query "debug" --limit 5
 
 # Check log files
-tail -f logs/redscraperpro_*.log
+tail -f RedScraperPro/logs/redscraperpro_*.log
 ```
 
 ### Getting Help
-1. Check log files in `logs/` directory
-2. Review configuration in `config/config.yaml`
-3. Test with small limits first
-4. Verify Reddit API credentials
+1. Check log files in the `RedScraperPro/logs/` directory.
+2. Review your configuration in `RedScraperPro/config/config.yaml`.
+3. Test with small limits first (e.g., `--limit 5`).
+4. Verify your Reddit API credentials are correct and have not expired.
 
 ---
 
 ## Best Practices
 
 ### Ethical Usage
-- **Educational Purpose**: Use for learning and research only
-- **Respect Rate Limits**: Don't overwhelm Reddit's servers
-- **Follow ToS**: Comply with Reddit's Terms of Service
-- **Privacy**: Respect user privacy and community guidelines
+- **Educational Purpose**: This tool is intended for educational and research purposes only. The author is not responsible for any misuse.
+- **Respect Rate Limits**: Do not overwhelm Reddit's servers.
+- **Follow ToS**: Comply with Reddit's Terms of Service.
+- **Privacy**: Respect user privacy and community guidelines.
 
 ### Performance Optimization
-- **Reasonable Limits**: Start with small limits (10-50 items)
-- **Rate Limiting**: Use appropriate delays between requests
-- **Batch Processing**: Process large datasets in smaller chunks
-- **Memory Management**: Export frequently for large datasets
+- **Reasonable Limits**: Start with small limits (10-50 items) to test your queries.
+- **Rate Limiting**: Use appropriate delays between requests to avoid being blocked.
+- **Batch Processing**: For very large scraping tasks, consider running them in smaller batches.
+- **Memory Management**: Export data frequently for large datasets to avoid high memory usage.
 
 ### Data Management
-- **Organize Output**: Use descriptive filenames and directories
-- **Backup Configuration**: Save your config files
-- **Version Control**: Track your scraping scripts (not credentials)
-- **Data Validation**: Verify exported data integrity
+- **Organize Output**: Use descriptive filenames and directories for your exports.
+- **Backup Configuration**: Save a backup of your `config.yaml` file.
+- **Version Control**: If you modify the scripts, use version control (like Git), but be sure to exclude your credentials.
+- **Data Validation**: Always check the integrity of your exported data.
 
 ### Security
-- **Protect Credentials**: Never commit API keys to version control
-- **Use Environment Variables**: For sensitive configuration
-- **Regular Updates**: Keep dependencies updated
-- **Monitor Usage**: Track your API usage patterns
+- **Protect Credentials**: Never commit your API keys or secrets to version control (e.g., a public GitHub repository).
+- **Use Environment Variables**: For advanced security, consider loading credentials from environment variables.
+- **Regular Updates**: Keep the tool and its dependencies updated.
+- **Monitor Usage**: Keep an eye on your Reddit API usage through the Reddit Apps dashboard.
 
 ---
 
@@ -427,79 +434,79 @@ tail -f logs/redscraperpro_*.log
 git clone https://github.com/yomazini/RedScraperPro.git
 cd RedScraperPro
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
-pip install -r requirements-dev.txt  # If available
+pip install -r requirements-dev.txt  # For development dependencies
 ```
 
 ### Running Tests
 ```bash
-python tests/test_basic.py
+python -m pytest RedScraperPro/tests/
 ```
 
 ### Code Style
-- Follow PEP 8 guidelines
-- Use type hints where appropriate
-- Add docstrings to functions and classes
-- Maintain the Horror/Itachi aesthetic theme
+- Follow PEP 8 guidelines.
+- Use type hints where appropriate.
+- Add clear docstrings to all functions and classes.
+- Maintain the Horror/Itachi aesthetic theme in user-facing elements.
 
 ### Submitting Issues
-Include:
-- System information (OS, Python version)
-- Full error messages and tracebacks
-- Steps to reproduce the issue
-- Configuration details (sanitized)
+When submitting an issue, please include:
+- Your operating system and Python version.
+- The full error message and traceback.
+- The steps required to reproduce the issue.
+- Your (sanitized) configuration details.
 
 ### Feature Requests
-- Describe the use case clearly
-- Explain how it fits the educational purpose
-- Consider the Horror/Itachi theme integration
-- Provide implementation suggestions if possible
+- Clearly describe the use case and how it benefits the tool.
+- Explain how the feature fits the educational purpose and theme.
+- Provide implementation suggestions if possible.
 
 ---
 
 ## License and Legal
 
 ### MIT License
-This project is licensed under the MIT License. See `LICENSE` file for details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-### Educational Purpose
-This tool is designed for educational purposes, research, and legitimate data analysis only.
+### Educational Purpose Only
+This tool is designed for educational purposes, research, and legitimate data analysis only. The author is not responsible for any misuse or any actions taken by the user that may violate Reddit's Terms of Service or any other laws.
 
 ### Disclaimer
-Users are responsible for ensuring their use complies with:
+Users are responsible for ensuring their use of RedScraperPro complies with:
 - Reddit's Terms of Service
-- Local laws and regulations
-- Data protection requirements
-- Ethical guidelines
+- All applicable local laws and regulations
+- Data protection and privacy requirements
+- Ethical research guidelines
 
 ### Third-Party Licenses
-This software uses several third-party libraries with their own licenses:
+This software uses several third-party libraries, each with its own license. Key libraries include:
 - PRAW (BSD 2-Clause)
 - Rich (MIT)
 - Pandas (BSD 3-Clause)
-- And others (see requirements.txt)
+- See `requirements.txt` for a full list.
 
 ---
 
 ## Support
 
 ### Documentation
+- **Sentiment Analysis Guide**: `docs/sentiment_analysis.md`
 - **Installation Guide**: `docs/installation.md`
 - **PRAW Setup**: `docs/praw-setup.md`
-- **Youtube Video Tutorial**: `link soon`
 - **Usage Examples**: `docs/usage-examples.md`
 - **Troubleshooting**: `docs/troubleshooting.md`
 
-### Community
-- **GitHub Issues**: https://github.com/yomazini/RedScraperPro/issues
-- **LinkedIn**: https://linkedin.com/in/yomazini
-- **Reddit**: r/redditdev for general Reddit API questions
+### Community & Contact
+- **GitHub Issues**: [https://github.com/yomazini/RedScraperPro/issues](https://github.com/yomazini/RedScraperPro/issues)
+- **YouTube Tutorial**: [Watch the tutorial](https://youtu.be/96-3VUxfNKc?si=yHE0wq3PGS10dpbp) (Coming Soon)
+- **Author on LinkedIn**: [Youssef Mazini](https://www.linkedin.com/in/youssef-mazini/)
+- **Reddit Community**: r/redditdev for general Reddit API questions
 
 ### Resources
-- **PRAW Documentation**: https://praw.readthedocs.io/
-- **Reddit API**: https://www.reddit.com/dev/api/
-- **Python Documentation**: https://docs.python.org/
+- **PRAW Documentation**: [https://praw.readthedocs.io/](https://praw.readthedocs.io/)
+- **Reddit API Wiki**: [https://www.reddit.com/dev/api/](https://www.reddit.com/dev/api/)
+- **Python Documentation**: [https://docs.python.org/](https://docs.python.org/)
 
 ---
 

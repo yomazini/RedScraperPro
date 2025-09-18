@@ -537,17 +537,18 @@ class CLIInterface:
             "[bold red]📖 RedScraperPro Documentation[/bold red]\n\n"
             "[white]🔗 Links:[/white]\n"
             "• GitHub Repository: [link]https://github.com/yomazini/RedScraperPro[/link]\n"
-            "• Full Documentation: [link]https://github.com/yomazini/RedScraperPro/blob/master/fullRedscrapperprohowtouse.pdf[/link]\n"
+            "• Full Documentation: [link]https://github.com/yomazini/RedScraperPro/blob/master/RedScraperPro/DOCUMENTATION.md[/link]\n"
+            "• YouTube Tutorial: [link]https://youtu.be/96-3VUxfNKc?si=yHE0wq3PGS10dpbp[/link] (Coming Soon)\n"
             "• Issue Tracker: [link]https://github.com/yomazini/RedScraperPro/issues[/link]\n"
-            "• LinkedIn: [link]https://linkedin.com/in/yomazini[/link]\n\n"
+            "• Talk with the author: [link]https://www.linkedin.com/in/youssef-mazini/[/link]\n\n"
             "[white]📋 Quick Commands:[/white]\n"
-            "• Interactive Mode: [cyan]python src/main.py[/cyan]\n"
-            "• Keyword Scraping: [cyan]python src/main.py --mode keyword --query \"python\"[/cyan]\n"
-            "• Subreddit Scraping: [cyan]python src/main.py --mode subreddit --target programming[/cyan]\n"
-            "• User Scraping: [cyan]python src/main.py --mode user --target username[/cyan]\n"
-            "• Configuration: [cyan]python src/main.py --setup[/cyan]\n\n"
+            "• Interactive Mode: [cyan]rsp[/cyan] or [cyan]redscraperpro[/cyan]\n"
+            "• Keyword Scraping: [cyan]rsp --mode keyword --query \"python\"[/cyan]\n"
+            "• Subreddit Scraping: [cyan]rsp --mode subreddit --target programming[/cyan]\n"
+            "• User Scraping: [cyan]rsp --mode user --target username[/cyan]\n"
+            "• Configuration: [cyan]rsp --setup[/cyan]\n\n"
             "[white]🆘 Support:[/white]\n"
-            "For issues, questions, or contributions, please visit our GitHub repository.",
+            "For issues, questions, or contributions, please visit our GitHub repository or contact the author on LinkedIn.",
             style="blue",
             border_style="blue"
         )

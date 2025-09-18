@@ -13,11 +13,11 @@
 ```
 
 > **⚠️ EDUCATIONAL PURPOSE ONLY**  
-> This tool is designed for educational purposes, research, and legitimate data analysis only. Please ensure you comply with Reddit's Terms of Service, API guidelines, and respect rate limits. Always use this tool responsibly and ethically.
+> This tool is designed for educational purposes, research, and legitimate data analysis only. The author is not responsible for any misuse. Please ensure you comply with Reddit's Terms of Service, API guidelines, and respect rate limits. Always use this tool responsibly and ethically.
 
 ---
 
-[image](https://github.com/yomazini/RedScraperPro/blob/master/logo.png)
+![logo](logo.png)
 
 ## 🎯 Features
 
@@ -55,39 +55,26 @@
 - Reddit API credentials (PRAW)
 
 ### Installation
+A simple installation script is provided to set up the tool and its dependencies.
 
-#### Option 1: Quick Install (Recommended)
 ```bash
 # Clone the repository
 git clone https://github.com/yomazini/RedScraperPro.git
 cd RedScraperPro
 
 # Run the installation script
-chmod +x install.sh
-./install.sh
+chmod +x install.sh && ./install.sh
 ```
-
-#### Option 2: Manual Install
-```bash
-# Clone and setup
-git clone https://github.com/yomazini/RedScraperPro.git
-cd RedScraperPro
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the tool
-python src/main.py
-```
+After installation, you can run the tool using `redscraperpro`, `rsp`, or `python -m RedScraperPro.src.redscraperpro.main`.
 
 ### Getting Reddit API Credentials
-📖 **Detailed Guide**: [How to Get PRAW API Credentials](https://github.com/yomazini/RedScraperPro/blob/master/fullRedscrapperprohowtouse.pdf)
+📖 **Detailed Guide**: [How to Get PRAW API Credentials](./RedScraperPro/DOCUMENTATION.md)
 
 Quick steps:
 1. Go to [Reddit Apps](https://www.reddit.com/prefs/apps)
 2. Click "Create App" or "Create Another App"
 3. Choose "script" as the app type
-4. Note down your `client_id`, `client_secret`, and set your `user_agent`
+4. Note down your `client_id`, `client_secret`, and set your `user_agent`. You can find your user agent here: [What is my User Agent?](https://51degrees.com/developers/user-agent-tester)
 
 ---
 
@@ -95,26 +82,29 @@ Quick steps:
 
 ### Interactive Mode
 ```bash
-python src/main.py
+# Run using any of the aliases
+rsp
+# or
+redscraperpro
 ```
 
 ### Command Line Mode
 ```bash
 # Scrape by keyword
-python src/main.py --mode keyword --query "python programming" --limit 100
+rsp --mode keyword --query "python programming" --limit 100
 
 # Scrape subreddit
-python src/main.py --mode subreddit --target "programming" --limit 50
+redscraperpro --mode subreddit --target "programming" --limit 50
 
 # Scrape user posts
-python src/main.py --mode user --target "username" --limit 25
+rsp --mode user --target "username" --limit 25
 
 # Export to different formats
-python src/main.py --mode keyword --query "AI" --export xlsx --output "ai_posts"
+rsp --mode keyword --query "AI" --export xlsx --output "ai_posts"
 ```
 
 ### Configuration
-First run will launch the configuration wizard to set up:
+The first time you run the tool, a configuration wizard will launch to help you set up:
 - Reddit API credentials
 - Default export settings
 - Scraping preferences
@@ -125,60 +115,72 @@ First run will launch the configuration wizard to set up:
 ## 📁 Project Structure
 
 ```
-RedScraperPro/
-├── README.md                 # This file
-├── LICENSE                   # MIT License
-├── NOTICE                    # Legal notices
-├── requirements.txt          # Python dependencies
-├── setup.py                  # Package setup
-├── install.sh               # Installation script
-├── src/
-│   ├── __init__.py
-│   ├── main.py              # Main CLI entry point
-│   ├── scraper/
-│   │   ├── __init__.py
-│   │   ├── reddit_scraper.py    # Core scraping logic
-│   │   ├── post_scraper.py      # Post-specific scraping
-│   │   ├── comment_scraper.py   # Comment-specific scraping
-│   │   └── user_scraper.py      # User-specific scraping
-│   ├── exporters/
-│   │   ├── __init__.py
-│   │   ├── csv_exporter.py      # CSV export functionality
-│   │   ├── xlsx_exporter.py     # Excel export functionality
-│   │   ├── json_exporter.py     # JSON export functionality
-│   │   └── txt_exporter.py      # Text export functionality
-│   ├── utils/
-│   │   ├── __init__.py
-│   │   ├── config.py            # Configuration management
-│   │   ├── logger.py            # Logging system
-│   │   ├── ascii_art.py         # ASCII art and themes
-│   │   ├── quotes.py            # Inspirational quotes system
-│   │   ├── progress.py          # Progress tracking
-│   │   └── sentiment.py         # Sentiment analysis
-│   └── cli/
-│       ├── __init__.py
-│       ├── interface.py         # CLI interface
-│       ├── commands.py          # CLI commands
-│       └── wizard.py            # Configuration wizard
-├── docs/
-│   ├── installation.md         # Detailed installation guide
-│   ├── praw-setup.md           # PRAW API setup guide
-│   ├── usage-examples.md       # Usage examples
-│   └── troubleshooting.md      # Common issues and solutions
-├── tests/
-│   ├── __init__.py
-│   ├── test_scraper.py         # Scraper tests
-│   ├── test_exporters.py       # Exporter tests
-│   └── test_utils.py           # Utility tests
-├── assets/
-│   ├── ascii_art.txt           # ASCII art templates
-│   └── quotes.json             # Inspirational quotes database
-├── examples/
-│   ├── basic_scraping.py       # Basic usage examples
-│   ├── advanced_scraping.py    # Advanced usage examples
-│   └── batch_processing.py     # Batch processing examples
-└── logs/                       # Log files directory
+.
+├── RedScraperPro/
+│   ├── assets/
+│   │   ├── ascii_art.txt
+│   │   └── quotes.json
+│   ├── config/
+│   │   └── readme.md
+│   ├── docs/
+│   │   ├── installation.md
+│   │   ├── praw-setup.md
+│   │   ├── sentiment_analysis.md
+│   │   ├── troubleshooting.md
+│   │   └── usage-examples.md
+│   ├── examples/
+│   │   └── basic_scraping.py
+│   ├── exports/
+│   │   └── README.md
+│   ├── logs/
+│   │   └── README.md
+│   ├── src/
+│   │   └── redscraperpro/
+│   │       ├── cli/
+│   │       │   ├── __init__.py
+│   │       │   ├── interface.py
+│   │       │   └── wizard.py
+│   │       ├── exporters/
+│   │       │   ├── __init__.py
+│   │       │   ├── csv_exporter.py
+│   │       │   ├── json_exporter.py
+│   │       │   ├── txt_exporter.py
+│   │       │   └── xlsx_exporter.py
+│   │       ├── scraper/
+│   │       │   ├── __init__.py
+│   │       │   ├── comment_scraper.py
+│   │       │   ├── post_scraper.py
+│   │       │   ├── reddit_scraper.py
+│   │       │   └── user_scraper.py
+│   │       ├── utils/
+│   │       │   ├── __init__.py
+│   │       │   ├── ascii_art.py
+│   │       │   ├── config.py
+│   │       │   ├── logger.py
+│   │       │   ├── progress.py
+│   │       │   ├── quotes.py
+│   │       │   └── sentiment.py
+│   │       ├── __init__.py
+│   │       └── main.py
+│   ├── tests/
+│   ├── DOCUMENTATION.md
+│   ├── FINAL_SUMMARY.md
+│   ├── LICENSE
+│   ├── NOTICE
+│   ├── PROJECT_SUMMARY.md
+│   ├── install.sh
+│   ├── notes_after_somefixed.md
+│   ├── requirements.txt
+│   └── setup.py
+├── README.md
+└── logo.png
 ```
+
+---
+
+## 💡 Best Usage / Monetization
+This section will be updated with a detailed article on the best usage and monetization strategies for a tool like RedScraperPro. For now, you can read a related article by the author:
+- [I Handled 137 Freelance Projects with a 4.9/5 Star Rating—Here’s What I Learned](https://medium.com/@mazini/i-handled-137-freelance-projects-with-a-4-9-83e38877dece)
 
 ---
 
@@ -267,8 +269,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support & Contact
 
 - 🐛 **Issues**: [GitHub Issues](https://github.com/yomazini/RedScraperPro/issues)
-- 📖 **Documentation**: [Full Guide](https://github.com/yomazini/RedScraperPro/blob/master/fullRedscrapperprohowtouse.pdf)
-- 💼 **LinkedIn**: [Connect with the developer](https://linkedin.com/in/yomazini)
+- 📖 **Documentation**: [Full Guide](https://github.com/yomazini/RedScraperPro/blob/master/RedScraperPro/DOCUMENTATION.md)
+- 튜 **YouTube Tutorial**: [Watch the tutorial](https://youtu.be/96-3VUxfNKc?si=yHE0wq3PGS10dpbp) (Coming Soon)
+- 💼 **LinkedIn**: [Connect with the developer](https://www.linkedin.com/in/youssef-mazini/)
 - 🐙 **GitHub**: [@yomazini](https://github.com/yomazini)
 
 ---

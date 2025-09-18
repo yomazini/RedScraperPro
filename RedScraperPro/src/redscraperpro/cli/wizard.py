@@ -95,7 +95,7 @@ class ConfigWizard:
             "5. After creation, note down:\n"
             "   • Client ID (under the app name, looks like: abc123def456)\n"
             "   • Client Secret (the 'secret' field)\n\n"
-            "[red]📖 Detailed Guide:[/red] [link]https://github.com/yomazini/RedScraperPro/blob/master/fullRedscrapperprohowtouse.pdf[/link]",
+            "[red]📖 Detailed Guide:[/red] [link]https://github.com/yomazini/RedScraperPro/blob/master/RedScraperPro/DOCUMENTATION.md[/link]",
             style="yellow",
             border_style="yellow"
         )
@@ -344,9 +344,9 @@ class ConfigWizard:
             "[bold green]🎯 CONFIGURATION COMPLETED SUCCESSFULLY! 🎯[/bold green]\n\n"
             "Your RedScraperPro is now configured and ready to use!\n\n"
             "[white]Next steps:[/white]\n"
-            "1. Run: [cyan]python src/main.py[/cyan] to start scraping\n"
-            "2. Use: [cyan]python src/main.py --help[/cyan] for command options\n"
-            "3. Check: [cyan]config/config.yaml[/cyan] to modify settings\n\n"
+            "1. Run: [cyan]rsp[/cyan] or [cyan]redscraperpro[/cyan] to start scraping\n"
+            "2. Use: [cyan]rsp --help[/cyan] for command options\n"
+            "3. Check: [cyan]config/config.yaml[/cyan] to modify settings (or import a previous config in the main menu)\n\n"
             "[yellow]📖 Documentation:[/yellow] [link]https://github.com/yomazini/RedScraperPro[/link]\n"
             "[yellow]🆘 Support:[/yellow] [link]https://github.com/yomazini/RedScraperPro/issues[/link]",
             style="green",
@@ -369,7 +369,7 @@ class ConfigWizard:
         quick_panel = Panel(
             "[bold red]⚡ QUICK SETUP MODE ⚡[/bold red]\n\n"
             "This will set up RedScraperPro with minimal configuration.\n"
-            "You can always run the full wizard later with: [cyan]python src/main.py --setup[/cyan]",
+            "You can always run the full wizard later with: [cyan]rsp --setup[/cyan]",
             style="red",
             border_style="red"
         )
@@ -392,7 +392,7 @@ class ConfigWizard:
         if self.config.save():
             self.ascii_art.display_success("Quick setup completed!")
             self.console.print("\n[green]You're ready to start scraping![/green]")
-            self.console.print("[dim]Run: python src/main.py[/dim]")
+            self.console.print("[dim]Run: rsp[/dim]")
         else:
             self.ascii_art.display_error("Setup failed!")
             sys.exit(1)

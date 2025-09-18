@@ -3,6 +3,8 @@
 RedScraperPro - Main Entry Point
 🩸 The Ultimate Reddit Scraping CLI Tool 🩸
 
+This script can be run directly or through the console scripts `rsp` or `redscraperpro`.
+
 "Those who cannot remember the past are condemned to repeat it." - George Santayana
 """
 
@@ -42,11 +44,11 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python main.py                                    # Interactive mode
-  python main.py --setup                           # Run configuration wizard
-  python main.py --mode keyword --query "python"   # Scrape by keyword
-  python main.py --mode subreddit --target "programming" --limit 50
-  python main.py --mode user --target "username" --export xlsx
+  rsp                                    # Interactive mode
+  rsp --setup                           # Run configuration wizard
+  rsp --mode keyword --query "python"   # Scrape by keyword
+  rsp --mode subreddit --target "programming" --limit 50
+  rsp --mode user --target "username" --export xlsx
   
 🩸 "In the world of data, we are all just shadows seeking light." 🩸
         """
