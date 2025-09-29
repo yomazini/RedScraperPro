@@ -499,7 +499,7 @@ This software uses several third-party libraries, each with its own license. Key
 
 ### Community & Contact
 - **GitHub Issues**: [https://github.com/yomazini/RedScraperPro/issues](https://github.com/yomazini/RedScraperPro/issues)
-- **YouTube Tutorial**: [Watch the tutorial](https://youtu.be/96-3VUxfNKc?si=yHE0wq3PGS10dpbp) (Coming Soon)
+- **YouTube Tutorial**: [Watch the tutorial](https://youtu.be/QAWp9YYULhk)
 - **Author on LinkedIn**: [Youssef Mazini](https://www.linkedin.com/in/youssef-mazini/)
 - **Reddit Community**: r/redditdev for general Reddit API questions
 

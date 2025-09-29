@@ -270,7 +270,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - 🐛 **Issues**: [GitHub Issues](https://github.com/yomazini/RedScraperPro/issues)
 - 📖 **Documentation**: [Full Guide](https://github.com/yomazini/RedScraperPro/blob/master/RedScraperPro/DOCUMENTATION.md)
-- 튜 **YouTube Tutorial**: [Watch the tutorial](https://youtu.be/96-3VUxfNKc?si=yHE0wq3PGS10dpbp) (Coming Soon)
+- 튜 **YouTube Tutorial**: [Watch the tutorial](https://youtu.be/QAWp9YYULhk)
 - 💼 **LinkedIn**: [Connect with the developer](https://www.linkedin.com/in/youssef-mazini/)
 - 🐙 **GitHub**: [@yomazini](https://github.com/yomazini)
 

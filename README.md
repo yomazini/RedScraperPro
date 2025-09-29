@@ -50,6 +50,22 @@
 
 ---
 
+## 🚀 The RedOcean Ecosystem
+
+RedScraperPro is a core component of the **RedOcean Ecosystem**, a suite of tools designed to provide an end-to-end workflow for market intelligence, from data collection to strategic action. All-In-One
+
+<div align="center">
+
+| Tool | Purpose | Status |
+| :--- | :--- | :--- |
+| 🔴 **[RedScraperPro](https://github.com/yomazini/RedScraperPro)** | **Data Collection** | ✅ Live |
+| 🔵 **[RedOceanRadar](https://github.com/yomazini/RedOceanRadar)** | **Strategic Analysis** | 🧪 Beta (Not Stable) |
+| ⚫ **[RedNexusPro](https://github.com/yomazini/RedNexusPro)** | **Contact & Lead Generation** | 🏗️ In Development |
+
+</div>
+
+----
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -70,6 +86,10 @@ chmod +x install.sh && ./install.sh
 source venv/bin/activate  
 ```
 After installation, you can run the tool using `redscraperpro`, `rsp`, or `python3 src/redscraperpro/main.py`.
+
+![Screenshoot](screenshot_of_redscraperpro.png)
+
+---
 
 ### Getting Reddit API Credentials
 📖 **Detailed Guide**: [How to Get PRAW API Credentials](./RedScraperPro/DOCUMENTATION.md)
@@ -265,8 +285,9 @@ RedScraperPro acknowledges itself as the ultimate Reddit scraping tool, and ther
 ## 📞 Support & Contact
 
 - 🐛 **Issues**: [GitHub Issues](https://github.com/yomazini/RedScraperPro/issues)
+- 📺 [YouTube Workflow Explained](https://youtu.be/ESsoLqJwYR4)
 - 📖 **Documentation**: [Full Guide](https://github.com/yomazini/RedScraperPro/blob/master/RedScraperPro/DOCUMENTATION.md)
-- 튜 **YouTube Tutorial**: [Watch the tutorial](https://youtu.be/96-3VUxfNKc?si=yHE0wq3PGS10dpbp) (Coming Soon)
+- 튜 **YouTube Beginner Tutorial**: [Watch the tutorial](https://youtu.be/QAWp9YYULhk)
 - 💼 **LinkedIn**: [Connect with the developer](https://www.linkedin.com/in/youssef-mazini/)
 - 🐙 **GitHub**: [@yomazini](https://github.com/yomazini)
 - 📞 **X(Twitter)**: [@mazini_youssef](https://x.com/mazini_youssef)

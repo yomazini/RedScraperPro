@@ -538,7 +538,7 @@ class CLIInterface:
             "[white]🔗 Links:[/white]\n"
             "• GitHub Repository: [link]https://github.com/yomazini/RedScraperPro[/link]\n"
             "• Full Documentation: [link]https://github.com/yomazini/RedScraperPro/blob/master/RedScraperPro/DOCUMENTATION.md[/link]\n"
-            "• YouTube Tutorial: [link]https://youtu.be/96-3VUxfNKc?si=yHE0wq3PGS10dpbp[/link] (Coming Soon)\n"
+            "• YouTube Tutorial: [link]https://youtu.be/QAWp9YYULhk[/link] (wathc)\n"
             "• Issue Tracker: [link]https://github.com/yomazini/RedScraperPro/issues[/link]\n"
             "• Talk with the author: [link]https://www.linkedin.com/in/youssef-mazini/[/link]\n\n"
             "[white]📋 Quick Commands:[/white]\n"
