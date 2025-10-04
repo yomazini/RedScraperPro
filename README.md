@@ -60,7 +60,8 @@ RedScraperPro is a core component of the **RedOcean Ecosystem**, a suite of tool
 | :--- | :--- | :--- |
 | 🔴 **[RedScraperPro](https://github.com/yomazini/RedScraperPro)** | **Data Collection** | ✅ Live |
 | 🔵 **[RedOceanRadar](https://github.com/yomazini/RedOceanRadar)** | **Strategic Analysis** | 🧪 Beta (Not Stable) |
-| ⚫ **[RedNexusPro](https://github.com/yomazini/RedNexusPro)** | **Contact & Lead Generation** | 🏗️ In Development |
+| ⚫ **[RedNexusPro](https://github.com/yomazini/RedNexusPro)** | **Contact & Lead Generation** | ✅ Live |
+| 🟡 **[CryptoSleuth](https://github.com/yomazini/CryptoSleuth)** | **Cryptocurrency Intelligence** | ✅ Live |
 
 </div>
 
