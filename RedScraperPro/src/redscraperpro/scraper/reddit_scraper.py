@@ -52,9 +52,15 @@ class RedditScraper:
             reddit = praw.Reddit(**reddit_config)
             
             # Test the connection
-            reddit.user.me()  # This will raise an exception if credentials are invalid
+            if reddit.read_only:
+                # Test connection by querying a public endpoint
+                subreddit = reddit.subreddit("test")
+                list(subreddit.hot(limit=1))
+                self.logger.success("Reddit API connection established (Read-Only)")
+            else:
+                reddit.user.me()  # This will raise an exception if credentials are invalid
+                self.logger.success("Reddit API connection established")
             
-            self.logger.success("Reddit API connection established")
             return reddit
             
         except Exception as e:
@@ -402,16 +408,19 @@ class RedditScraper:
         """Test Reddit API connection"""
         try:
             # Try to access Reddit
-            user = self.reddit.user.me()
-            if user:
-                self.logger.success(f"Connected as: {user.name}")
-                return True
-            else:
+            if self.reddit.read_only:
                 # Try read-only access
                 subreddit = self.reddit.subreddit("test")
                 list(subreddit.hot(limit=1))
                 self.logger.success("Read-only connection successful")
                 return True
+            else:
+                user = self.reddit.user.me()
+                if user:
+                    self.logger.success(f"Connected as: {user.name}")
+                    return True
+                else:
+                    return False
         except Exception as e:
             self.logger.error(f"Connection test failed: {str(e)}")
             return False

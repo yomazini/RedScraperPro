@@ -1,0 +1,39 @@
+# Virtual environment
+venv/
+.venv/
+env/
+bin/
+lib/
+share/
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+
+# Project-specific ignores
+config/*.yaml
+config/*.yml
+exports/
+*.csv
+*.json
+*.xlsx
+*.txt
+
+# IDE / Editor configuration
+.vscode/
+.idea/
+.project
+.pydevproject
+
+# Scratch/test scripts
+python_test.py
+testing_shiitreddit.py

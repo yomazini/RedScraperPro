@@ -318,10 +318,7 @@ class ConfigWizard:
             self.console.print("🧪 Testing Reddit API connection...")
             
             # Try to access Reddit
-            user = reddit.user.me()
-            if user:
-                self.ascii_art.display_success(f"Connected as: {user.name}")
-            else:
+            if reddit.read_only:
                 # Try read-only access
                 subreddit = reddit.subreddit("test")
                 post_count = len(list(subreddit.hot(limit=1)))
@@ -329,6 +326,12 @@ class ConfigWizard:
                     self.ascii_art.display_success("Read-only connection successful!")
                 else:
                     raise Exception("Unable to access Reddit")
+            else:
+                user = reddit.user.me()
+                if user:
+                    self.ascii_art.display_success(f"Connected as: {user.name}")
+                else:
+                    raise Exception("Unable to access Reddit user profile")
             
         except ImportError:
             self.ascii_art.display_warning("PRAW not installed. Install with: pip install praw")

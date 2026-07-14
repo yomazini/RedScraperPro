@@ -21,7 +21,7 @@ class TestConfig(unittest.TestCase):
     """Test configuration management"""
     
     def setUp(self):
-        self.config = Config()
+        self.config = Config(config_path="config/nonexistent_test_config.yaml")
     
     def test_reddit_config_creation(self):
         """Test Reddit configuration creation"""
@@ -113,10 +113,10 @@ class TestQuotes(unittest.TestCase):
         self.assertIsInstance(itachi_quote, str)
         
         # Check that quotes contain expected content
-        self.assertIn("Marcus Aurelius", stoic_quote)
-        self.assertIn("Kafka", kafka_quote)
-        self.assertIn("Dostoevsky", dostoevsky_quote)
-        self.assertIn("Itachi", itachi_quote)
+        self.assertIn(stoic_quote, self.quotes.stoic_quotes)
+        self.assertIn(kafka_quote, self.quotes.kafka_quotes)
+        self.assertIn(dostoevsky_quote, self.quotes.dostoevsky_quotes)
+        self.assertIn(itachi_quote, self.quotes.itachi_quotes)
     
     def test_random_quote(self):
         """Test random quote selection"""
@@ -235,7 +235,7 @@ class TestErrorHandling(unittest.TestCase):
     
     def test_invalid_config(self):
         """Test handling of invalid configuration"""
-        config = Config()
+        config = Config(config_path="config/nonexistent_test_config.yaml")
         
         # Test validation with empty config
         self.assertFalse(config.validate_reddit_config())
